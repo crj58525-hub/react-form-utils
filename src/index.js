@@ -19,7 +19,7 @@ export function validateMinLength(value, min) {
   return value.length >= min;
 }
 
-export function validatePhone(phone, { strict = false } = {}) {
+export function validatePhoneNumber(phone, { strict = false } = {}) {
   if (typeof phone !== "string") return false;
   const digits = phone.replace(/[\s\-().]/g, "");
   if (strict) {
