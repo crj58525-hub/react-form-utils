@@ -3,8 +3,7 @@
  */
 
 export function validateEmail(email) {
-  // BUG: regex is too permissive, allows invalid TLDs
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   return re.test(email);
 }
 
