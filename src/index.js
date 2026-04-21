@@ -19,5 +19,13 @@ export function validateMinLength(value, min) {
   return value.length >= min;
 }
 
-// TODO: add phone number validation
+export function validatePhone(phone, { strict = false } = {}) {
+  if (typeof phone !== "string") return false;
+  const digits = phone.replace(/[\s\-().]/g, "");
+  if (strict) {
+    return /^\+[1-9]\d{1,14}$/.test(digits);
+  }
+  return /^\+?[1-9]\d{1,14}$/.test(digits);
+}
+
 // TODO: add credit card format validation
